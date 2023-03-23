@@ -1,0 +1,7 @@
+#!/bin/sh
+
+trap "{ echo Stopping Postfix; /usr/sbin/postfix stop; exit 0; }" EXIT HUP INT QUIT TERM
+
+#/usr/sbin/postconf -e inet_interfaces=all
+/usr/sbin/postfix start
+sleep infinity
